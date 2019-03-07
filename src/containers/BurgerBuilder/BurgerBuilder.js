@@ -35,6 +35,10 @@ class BurgerBuilder extends Component {
         this.setState({purchasing: false})
     }
 
+    purchaseContinueHandler = () => {
+        alert("You bought a burger!")
+    }
+
     updatePurchaseState = (ingredients) => {
         const purchasableAray = Object.values(ingredients).reduce((acc, curr) => acc + curr);
         const newPurchase = (purchasableAray > 0);
@@ -82,7 +86,11 @@ class BurgerBuilder extends Component {
         return (
             <ReactAux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
-                    <OrderSummary ingredients={this.state.ingredients}/>
+                    <OrderSummary 
+                        ingredients = {this.state.ingredients}
+                        purchaseContinue = {this.purchaseContinueHandler}
+                        purchaseCancel = {this.purchaseCancelHandler}
+                        burgerPrice = {this.state.totalPrice}/>
                 </Modal>
                 <Burger ingredients={this.state.ingredients} /> {/*przekazujemy do komponentu Burger obiekt ingredience ze stanu state*/}
                 <BurgerControls 
