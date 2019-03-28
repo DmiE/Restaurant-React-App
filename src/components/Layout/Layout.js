@@ -1,15 +1,37 @@
-import React from 'react'
-import ReactAux from '../../hoc/ReactAux'
-import classes from './Layout.css'
-import Toolbar from '../Navigation/Toolbar/Toolbar'
+import React, { Component } from 'react';
+import ReactAux from '../../hoc/ReactAux';
+import classes from './Layout.css';
+import Toolbar from '../Navigation/Toolbar/Toolbar';
+import SiteDrawer from '../Navigation/SiteDrawer/SiteDrawer';
 
-const layout = (props) => (
-    <ReactAux>
-        <Toolbar/>
-        <main className = {classes.Content}>
-            {props.children}
-        </main>
-    </ReactAux>
-);
+class Layout extends Component {
 
-export default layout;
+    state = {
+        openedSiteDrawer: true
+    };
+
+    closeSiteDrawerHandler = () => {
+        this.setState ({openedSiteDrawer: false});
+    }
+
+    openSiteDrawerHandler = () => {
+        this.setState ({openedSiteDrawer: true});
+    }
+
+
+    render() {
+
+        return (
+            <ReactAux>
+                <SiteDrawer open={this.state.openedSiteDrawer} closed={this.closeSiteDrawerHandler}/>
+                <Toolbar open={this.openSiteDrawerHandler}/>
+                <main className={classes.Content}>
+                    {this.props.children}
+                </main>
+            </ReactAux>
+        )
+    }
+
+};
+
+export default Layout;
