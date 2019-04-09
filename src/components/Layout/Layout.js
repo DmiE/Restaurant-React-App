@@ -7,7 +7,7 @@ import SiteDrawer from '../Navigation/SiteDrawer/SiteDrawer';
 class Layout extends Component {
 
     state = {
-        openedSiteDrawer: true
+        openedSiteDrawer: false
     };
 
     closeSiteDrawerHandler = () => {
