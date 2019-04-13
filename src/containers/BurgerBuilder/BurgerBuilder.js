@@ -96,12 +96,20 @@ class BurgerBuilder extends Component {
     }
 
     render () {
-        const disabledInfo = {
+        const disabledLessInfo = {
             ...this.state.ingredients
         };
 
-        for (let i in disabledInfo) {
-            disabledInfo[i]= disabledInfo[i] <= 0;
+        for (let i in disabledLessInfo) {
+            disabledLessInfo[i]= disabledLessInfo[i] <= 0;
+        }
+
+        const disabledMoreInfo = {
+            ...this.state.ingredients
+        };
+
+        for (let i in disabledMoreInfo) {
+            disabledMoreInfo[i]= disabledMoreInfo[i] >= 2;
         }
 
         let orderSummary = <OrderSummary 
@@ -123,7 +131,8 @@ class BurgerBuilder extends Component {
                 <BurgerControls 
                     ingredientAdded={this.addIngredientHandler} 
                     ingredientRemoved={this.removeIngredientHandler} 
-                    disabled={disabledInfo}
+                    disabledLess={disabledLessInfo}
+                    disabledMore={disabledMoreInfo}
                     price={this.state.totalPrice}
                     purchasable={this.state.purchasable}
                     ordered={this.purchaseHandler}/>
