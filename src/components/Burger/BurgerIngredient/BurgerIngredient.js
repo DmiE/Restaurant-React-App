@@ -6,30 +6,37 @@ class BurgerIngredient extends Component {
 
     render() {
         let ingredient = null;
+       // let ingredients = this.props.ingredients
+        let meatStyle = {zIndex: '20'}
+        let cheeseStyle = {zindex: '30'}
+        let saladStyle = {zIndex: '50'}
+        let baconStyle = {zIndex: '40'}
+        
+        // TODO: dodać counter odpowiednio podnoszacy z-index
+
+        /*if (ingredients[this.props.type]){
+            console.log(ingredients)
+        }
+*/
 
         switch (this.props.type) {
             case ('bread-bottom'):
                 ingredient = <div className={classes.BreadBottom}></div>
                 break;
             case ('bread-top'):
-                ingredient = (
-                    <div className={classes.BreadTop}>
-                        <div className={classes.Seeds1}></div>
-                        <div className={classes.Seeds2}></div>
-                    </div>
-                )
+                ingredient = <div className={classes.BreadTop}></div>
                 break;
             case ('meat'):
-                ingredient = <div className={classes.Meat}></div>;
+                ingredient = <div style={meatStyle} className={classes.Meat}></div>;
                 break;
             case ('cheese'):
-                ingredient = <div className={classes.Cheese}></div>;
+                ingredient = <div style={cheeseStyle} className={classes.Cheese}></div>;
                 break;
             case ('salad'):
-                ingredient = <div className={classes.Salad}></div>;
+                ingredient = <div style={saladStyle} className={classes.Salad}></div>;
                 break;
             case ('bacon'):
-                ingredient = <div className={classes.Bacon}></div>;
+                ingredient = <div style={baconStyle} className={classes.Bacon}></div>;
                 break;
             default:
                 ingredient = null;

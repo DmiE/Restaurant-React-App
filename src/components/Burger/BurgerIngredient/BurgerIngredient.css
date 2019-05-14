@@ -1,3 +1,4 @@
+/*
 .BreadBottom {
     height: 13%;
     width: 80%;
@@ -110,4 +111,77 @@
     height: 3%;
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
+}
+*/
+
+.BreadBottom {
+  background-image: url("../../../assets/images/burger_jpgs/bottom.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 118px;
+  background-size: contain;
+  margin: 0 auto;
+  z-index: 10;
+  margin-top: -50px;
+}
+
+.BreadTop {
+  background-image: url("../../../assets/images/burger_jpgs/top.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 125px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  z-index: 60;
+}
+
+.Meat {
+  background-image: url("../../../assets/images/burger_jpgs/meat.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 96px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+  margin-top: -70px;
+}
+
+.Cheese {
+  background-image: url("../../../assets/images/burger_jpgs/cheese.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 114px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 30;
+  margin-top: -70px;
+}
+
+.Salad {
+  background-image: url("../../../assets/images/burger_jpgs/salad.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 114px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 50;
+  margin-top: -50px;
+
+}
+
+.Bacon {
+  background-image: url("../../../assets/images/burger_jpgs/bacon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 40;
+  margin-top: -70px;
 }
