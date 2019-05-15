@@ -7,7 +7,7 @@ const Burger = (props) => {
     let transformedIngredients = Object.keys(props.ingredients) // take keys from Ingredients Object
         .map(igKey => {
             return [...Array(props.ingredients[igKey])].map((_, i) => { // Create empty array for any Key from Object 
-                return <BurgerIngrediend key={igKey + i} type={igKey}/>; // Return BurgerIngredient comp with uniq key
+                return <BurgerIngrediend key={igKey + i} type={igKey} ingredients={props.ingredients}/>; // Return BurgerIngredient comp with uniq key
             });
         })
         .reduce((arr, el) => {
